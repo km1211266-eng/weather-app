@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main Screen: Data entry for each day's weather -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1628">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌤 Weekly Weather Tracker"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter each day's weather data"
+            android:textSize="13sp"
+            android:textColor="#7B9FC4"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Input Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#112240"
+            android:padding="18dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day of the Week"
+                android:textColor="#8892B0"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- EditText: Day name input -->
+            <EditText
+                android:id="@+id/edtDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g. Monday"
+                android:inputType="text"
+                android:textColor="#CCD6F6"
+                android:textColorHint="#4A5568"
+                android:background="@drawable/input_bg"
+                android:padding="12dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minimum Temperature (°C)"
+                android:textColor="#8892B0"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- EditText: Min temperature — numberDecimal forces numeric keyboard -->
+            <EditText
+                android:id="@+id/edtMin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g. 12.5"
+                android:inputType="numberDecimal|numberSigned"
+                android:textColor="#CCD6F6"
+                android:textColorHint="#4A5568"
+                android:background="@drawable/input_bg"
+                android:padding="12dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maximum Temperature (°C)"
+                android:textColor="#8892B0"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- EditText: Max temperature -->
+            <EditText
+                android:id="@+id/edtMax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g. 25.0"
+                android:inputType="numberDecimal|numberSigned"
+                android:textColor="#CCD6F6"
+                android:textColorHint="#4A5568"
+                android:background="@drawable/input_bg"
+                android:padding="12dp"
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weather Condition"
+                android:textColor="#8892B0"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- EditText: Weather condition -->
+            <EditText
+                android:id="@+id/edtCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g. Sunny, Rainy, Cloudy"
+                android:inputType="text"
+                android:textColor="#CCD6F6"
+                android:textColorHint="#4A5568"
+                android:background="@drawable/input_bg"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+        <!-- Add Button -->
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+ Add Day"
+            android:textColor="#0A1628"
+            android:backgroundTint="#64FFDA"
+            android:textSize="15sp"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Average Temperature Display -->
+        <TextView
+            android:id="@+id/txtAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Average Max Temp: --"
+            android:textSize="15sp"
+            android:textColor="#64FFDA"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="#112240"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Calculate Average Button -->
+        <Button
+            android:id="@+id/btnAverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Average"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E3A5F"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- View Details Button -->
+        <Button
+            android:id="@+id/btnDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 View Detailed Report"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E3A5F"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Clear Data Button -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🗑 Clear All Data"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2D1B1B"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Exit Button -->
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exit App"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1A1A2E"
+            android:textSize="14sp"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>
